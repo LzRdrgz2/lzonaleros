@@ -336,10 +336,11 @@ title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-w
     });
 </script>
 
-<a href="Intent://lacinelocuradelzplayhdgratis.blogspot.com/#Intent;package=com.instantbits.cast.webvideo;scheme=https;end" data-url="" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="m160-800 80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800Zm0 240v320h640v-320H160Zm0 0v320-320Z"/></svg></a>
-<a href="Intent://lacinelocuradelzplayhdgratis.blogspot.com/#Intent;package=idm.internet.download.manager;scheme=https;end" data-url="" target="_blank" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M240-120v-80l40-40H160q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h320v80H160v440h640v-120h80v120q0 33-23.5 56.5T800-240H680l40 40v80H240Zm360-240L400-560l56-56 104 103v-327h80v327l104-103 56 56-200 200Z"/></svg></a>
+<!-- WEB CAST Y 1DM -->
 
-<!--PEGAR SCRIPT ABAJO-->
+<!-- FINAL -->
+
+
 
 `;                  
                     template.innerText = justHtml;
