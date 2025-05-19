@@ -70,22 +70,7 @@ function generar() {
                             runtime = ''
                         }
                         episodeList += `
-                        <li>
-                        <a href="#!" class="episode" 
-                        option-1-lang="Lat"
-                        option-1-server="HD"
-                        option-1-url=""
-                        >
-                        <div class="episode__img">
-                        <img src="https://image.tmdb.org/t/p/w300${episode.still_path}" onerror="this.style='display:none';">
-                        <div class="episode__no-image"><i class="fa-regular fa-circle-play"></i></div>
-                        </div>
-                        <div class="epsiode__info">
-                        <h4 class="episode__info__title">${episode.episode_number} - ${episode.name}</h4>
-                        <div class="episode__info__duration">${runtime}</div>
-                        </div>
-                        </a>
-                        </li>
+                        <a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">${episode.episode_number}</a>
                         `
                     })
     
@@ -94,7 +79,7 @@ function generar() {
                     datos.seasons.forEach(season => {
                         
                         if(season.name != "Especiales"){
-                            seasonsOption += `<option value="${season.season_number}">Temporada ${season.season_number}</option>
+                            seasonsOption += `<!-- SEASON NUMERO ${seasonNumber} -->
                             `
                         }
                     })
@@ -109,7 +94,12 @@ function generar() {
                     
                     let template = document.getElementById('html-final');
     
-                    let justHtml = `  
+                    let justHtml = `
+                    <!--EXTRA INFO
+${datos.name}
+Serie,${tags}${datos.first_air_date.slice(0,4)},
+
+-->  
                     <style>
   a.episode {
     text-decoration: none;
@@ -151,46 +141,10 @@ function generar() {
 
 <div id="episodes">
   <!-- Agrega todos los episodios aquí -->
-
+${episodeList}
 
 
 </div>
-
-<!-- EPISODIOS COPIA Y PEGA
-
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">01</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">02</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">03</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">04</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">05</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">06</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">07</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">08</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">09</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">10</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">11</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">12</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">13</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">14</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">15</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">16</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">17</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">18</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">19</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">20</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">21</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">22</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">23</a>
-<a href="__URL__" class="episode" data-urls="_URL__" target="_blank" rel="nofollow">24</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">25</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">26</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">27</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">28</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">29</a>
-<a href="__URL__" class="episode" data-url="__URL__" target="_blank" rel="nofollow">30</a>
-
--->
-
 
 <script>
     const links = document.querySelectorAll('a[data-url]');
@@ -228,22 +182,23 @@ function generar() {
 
 <!--PEGAR SCRIPT ABAJO-->
 
+<script>
+   let temporadas = `
+      <div class="related-posts">
 
 
-<!--EXTRA INFO
-${datos.name}
-Serie,${tags}${datos.first_air_date.slice(0,4)},
+ </div>
+   `;
+</script>
 
--->
+
                     `;
                     
                     let seasonOnly = `
-                    <ul class="caps-grid hide" id="season-${seasonNumber}">
+                    <!--SEASON NUMERO ${seasonNumber}-->
                     ${episodeList}
-                    </ul><!--Siguiente temporada debajo-->
-    
-    
-    
+                    <!--Siguiente temporada debajo-->
+
                     `;
     
                     const btnCopiar = document.getElementById('copiar');
