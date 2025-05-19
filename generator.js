@@ -182,15 +182,6 @@ ${episodeList}
 
 <!--PEGAR SCRIPT ABAJO-->
 
-<script>
-   let temporadas = `
-      <div class="related-posts">
-
-
- </div>
-   `;
-</script>
-
 
                     `;
                     
@@ -294,14 +285,7 @@ title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-w
 <!-- WEB CAST Y 1DM -->
 
 <!-FINAL-->
-<script>
-   let temporadas = `
-      <div class="related-posts">
 
-
- </div>
-   `;
-</script>
 `;                  
                     template.innerText = justHtml;
                     let templateHTML = template.innerText;
