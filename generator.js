@@ -293,10 +293,15 @@ title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-w
 
 <!-- WEB CAST Y 1DM -->
 
-<!-- FINAL -->
+<!-FINAL-->
+<script>
+   let temporadas = `
+      <div class="related-posts">
 
 
-
+ </div>
+   `;
+</script>
 `;                  
                     template.innerText = justHtml;
                     let templateHTML = template.innerText;
